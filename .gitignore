@@ -1,2 +1,7 @@
 Temp
 WIP
+*.gitignore
+.vs
+Library
+obj
+Assembly-CSharp.csproj
