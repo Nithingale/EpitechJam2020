@@ -1,7 +1,8 @@
 Temp
 WIP
-*.gitignore
+*.lock
 .vs
+*.gitignore
 Library
 obj
 Assembly-CSharp.csproj
