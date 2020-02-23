@@ -17,6 +17,8 @@ public class MoveHand : MonoBehaviour
     void Start()
     {
         target = targetRight;
+        Score scr = StaticClass.CrossSceneInformation.GetComponent<Score>();
+        scr.Activate();
     }
 
     // Update is called once per frame

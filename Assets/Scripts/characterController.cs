@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class characterController : MonoBehaviour
 {
@@ -18,12 +19,13 @@ public class characterController : MonoBehaviour
     public float speedIncrement = 0.1f;
     public GameObject restart;
     public GameObject win;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         current_speed = speed;
+        Score scr = StaticClass.CrossSceneInformation.GetComponent<Score>();
+        scr.Activate();
     }
 
     // Update is called once per frame
