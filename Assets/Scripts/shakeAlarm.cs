@@ -13,6 +13,7 @@ public class shakeAlarm : MonoBehaviour
     public Transform check;
     public LayerMask whatIsHand;
 
+    private float time;
     private Vector3 target;
     // Start is called before the first frame update
     void Start()
@@ -20,11 +21,14 @@ public class shakeAlarm : MonoBehaviour
         isShaking = false;
         startTime = Random.Range(2, 5);
         target = targetRight;
+        Time.timeScale = 1f;
+        time = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
         if (Physics2D.OverlapCircle(check.position, 0f, whatIsHand))
         {
             if (isShaking)
@@ -33,7 +37,7 @@ public class shakeAlarm : MonoBehaviour
                 SceneManager.LoadScene("winWakeUp", LoadSceneMode.Single);
             }
         }
-        if (startTime < Time.time) {
+        if (startTime < time) {
             isShaking = true;
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);

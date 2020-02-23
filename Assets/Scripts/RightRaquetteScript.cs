@@ -11,6 +11,8 @@ public class RightRaquetteScript : MonoBehaviour
     private Vector3 target;
     private float startTime;
     public float speed;
+    private float time;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +21,16 @@ public class RightRaquetteScript : MonoBehaviour
         startTime = Random.Range(7, 9);
         targetUp = new Vector3(transform.position.x, (float)(transform.position.y + 1), transform.position.z);
         target = targetDown;
+        Time.timeScale = 1f;
+        time = 0.0f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Transform tr = Grenada.GetComponent<Transform>();
-
+        time += Time.deltaTime;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
@@ -38,7 +43,7 @@ public class RightRaquetteScript : MonoBehaviour
 
         if (tr.position.y <= -0.5f && tr.position.x < 5 && tr.position.x > 3)
         {
-            if (startTime > Time.time)
+            if (startTime > time)
             {
                 Debug.Log("Smash");
                 if (transform.position.y == targetDown.y)

@@ -20,10 +20,9 @@ public class Score : MonoBehaviour
     {
         if (isActivate)
         {
-            Debug.Log("Here");
             timer += Time.deltaTime;
         }
-        int secs = Mathf.CeilToInt(timer % 60);
+        int secs = Mathf.CeilToInt(timer);
         scoreText.text = "Score: " + secs.ToString();
     }
 
@@ -35,5 +34,10 @@ public class Score : MonoBehaviour
     public void Desactivate()
     {
         isActivate = false;
+    }
+
+    public void setScore(int score)
+    {
+        timer = score;
     }
 }
