@@ -36,14 +36,12 @@ public class morseControl : MonoBehaviour
     {        
         speed += acceleration * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (end)
-        {
+        if (end) {
             timer += Time.deltaTime;
             if (timer > 3)
             {
                 int rand = SceneManager.GetActiveScene().buildIndex;
-                while (SceneManager.GetActiveScene().buildIndex == rand)
-                {
+                while (SceneManager.GetActiveScene().buildIndex == rand) {
                     rand = Random.Range(1, 4);
                 }
                 SceneManager.LoadScene(sceneBuildIndex: rand);
@@ -56,12 +54,15 @@ public class morseControl : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space)) {
                     levelScore += Time.deltaTime;
                 } else {
-                    levelScore -= Time.deltaTime * 1.5f;
+                    levelScore -= Time.deltaTime * 2.0f;
                 }
             } else if (Input.GetKey(KeyCode.Space)) {
-                levelScore -= Time.deltaTime * 2.0f;
+                levelScore -= Time.deltaTime * 4.0f;
             }
             levelScore = Mathf.Clamp(levelScore, -1.0f, 1.0f);
+            if (levelScore == -1.0f) {
+                end = true;
+            }
 
             var progressRenderer = progress.GetComponent<Renderer>();
             float r = Mathf.Clamp(-levelScore, .0f, 1.0f);
