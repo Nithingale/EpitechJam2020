@@ -14,7 +14,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AlarmMiniGame.unity
     guid: 681c0f368dace62439b3b1538bb73e40
+  - enabled: 1
+    path: Assets/Scenes/fairTrade/fairTrade.unity
+    guid: cd02684db490de8448ec32febce22060
   - enabled: 0
-    path: Assets/Scenes/Game.unity
-    guid: 047e5bf3b06e6c94295d83cddf6b3b42
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/wakeUp/loseWakeUp.unity
+    guid: 8dc152f3c09acaf41a90058d4be7b909
+  - enabled: 1
+    path: Assets/Scenes/wakeUp/winWakeup.unity
+    guid: d67e4d51941da5140b977cc62fcf4f9e
+  - enabled: 1
+    path: Assets/Scenes/fairTrade/Loose.unity
+    guid: 3604bb331110fd44f8554bd6e438bdc7
+  - enabled: 1
+    path: Assets/Scenes/fairTrade/Win.unity
+    guid: edafcafd1028e4b40bd3477cc6037ee2
   m_configObjects: {}

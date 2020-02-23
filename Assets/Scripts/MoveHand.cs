@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveHand : MonoBehaviour
 {
+    public int life = 3;
     public float speed;
     public float speedIncrement = 10f;
     public Vector3 targetRight;
@@ -13,7 +15,7 @@ public class MoveHand : MonoBehaviour
     private Vector3 targetUp;
     private Vector3 targetDown;
     private Vector3 position;
-    // Start is called before the first frame update
+
     void Start()
     {
         target = targetRight;
@@ -21,7 +23,6 @@ public class MoveHand : MonoBehaviour
         scr.Activate();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float step = speed * Time.deltaTime;
@@ -35,28 +36,29 @@ public class MoveHand : MonoBehaviour
                 targetDown = new Vector3(transform.position.x, target.y - 6, target.z);
                 targetUp = new Vector3(transform.position.x, target.y, target.z);
                 target = targetDown;
-                Debug.Log("Going down");
             }
+            life -= 1;
         }
         else if (transform.position == targetRight)
         {
-            Debug.Log("Going Left");
             target = targetLeft;
         }
         else if (transform.position == targetLeft)
         {
-            Debug.Log("Going Right");
             target = targetRight;
         }
         else if (transform.position == targetDown)
         {
-            Debug.Log("Going up");
             target = new Vector3(transform.position.x, targetUp.y, target.z);
         }
         else if (transform.position == targetUp)
         {
-            Debug.Log("Going Right");
             target = targetRight;
+        }
+        if (life <= 0)
+        {
+            //you lose
+            SceneManager.LoadScene("loseWakeUp", LoadSceneMode.Single);
         }
     }
 }

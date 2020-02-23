@@ -18,7 +18,7 @@ public class startGame : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            int rand = Random.Range(1, SceneManager.sceneCountInBuildSettings);
+            int rand = Random.Range(1, 3);
             DontDestroyOnLoad(panel);
             StaticClass.CrossSceneInformation = text;
             SceneManager.LoadScene(sceneBuildIndex:rand);

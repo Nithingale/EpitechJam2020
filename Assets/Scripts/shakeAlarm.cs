@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class shakeAlarm : MonoBehaviour
 {
@@ -28,7 +29,8 @@ public class shakeAlarm : MonoBehaviour
         {
             if (isShaking)
             {
-                Time.timeScale = 0f;
+                //you win
+                SceneManager.LoadScene("winWakeUp", LoadSceneMode.Single);
             }
         }
         if (startTime < Time.time) {
