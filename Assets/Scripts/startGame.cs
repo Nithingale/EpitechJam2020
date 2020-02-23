@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class startGame : MonoBehaviour
 {
+    public GameObject text;
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class startGame : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             int rand = Random.Range(1, SceneManager.sceneCountInBuildSettings);
+            DontDestroyOnLoad(panel);
+            StaticClass.CrossSceneInformation = text;
             SceneManager.LoadScene(sceneBuildIndex:rand);
         }
     }
