@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class Score : MonoBehaviour
 {
     private TextMeshProUGUI scoreText;
@@ -11,6 +13,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         scoreText = GetComponent<TextMeshProUGUI>();
         isActivate = false;
     }
@@ -18,6 +21,8 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            gameObject.SetActive(false);
         if (isActivate)
         {
             timer += Time.deltaTime;
@@ -28,6 +33,7 @@ public class Score : MonoBehaviour
 
     public void Activate()
     {
+        gameObject.SetActive(true);
         isActivate = true;
     }
 
