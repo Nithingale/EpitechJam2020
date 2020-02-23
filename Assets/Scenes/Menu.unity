@@ -714,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1098236150}
   panel: {fileID: 259708994}
+  nbScene: 5
 --- !u!1 &1945099113
 GameObject:
   m_ObjectHideFlags: 0

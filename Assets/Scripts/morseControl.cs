@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class morseControl : MonoBehaviour
 {
@@ -16,10 +17,18 @@ public class morseControl : MonoBehaviour
 
     private float levelScore;
 
+    private bool end;
+    private float timer;
+
     // Start is called before the first frame update
     void Start()
     {
         levelScore = .0f;
+        Score scr = StaticClass.CrossSceneInformation.GetComponent<Score>();
+        scr.Activate();
+        end = false;
+        timer = 0.0f;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -27,8 +36,21 @@ public class morseControl : MonoBehaviour
     {        
         speed += acceleration * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if (end)
+        {
+            timer += Time.deltaTime;
+            if (timer > 3)
+            {
+                int rand = SceneManager.GetActiveScene().buildIndex;
+                while (SceneManager.GetActiveScene().buildIndex == rand)
+                {
+                    rand = Random.Range(1, 4);
+                }
+                SceneManager.LoadScene(sceneBuildIndex: rand);
+            }
+        }
         if (transform.position.x == target.x) {
-            Debug.Log("fini");
+            end = true;
         } else {
             if (Physics2D.OverlapCircle(check.position, 0f, whatIsMorse)) {
                 if (Input.GetKey(KeyCode.Space)) {

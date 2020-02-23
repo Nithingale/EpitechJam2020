@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AlarmMiniGame.unity
     guid: 681c0f368dace62439b3b1538bb73e40
   - enabled: 1
+    path: Assets/Scenes/Morse.unity
+    guid: 938ea94613cc8ff4ba77913ec0df595f
+  - enabled: 1
     path: Assets/Scenes/fairTrade/fairTrade.unity
     guid: cd02684db490de8448ec32febce22060
   - enabled: 0
