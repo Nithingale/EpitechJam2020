@@ -1,9 +1,13 @@
 sceneSetups:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 - path: Assets/Scenes/HelicopterGame.unity
 =======
 - path: Assets/Scenes/AlarmMiniGame.unity
 >>>>>>> master
+=======
+- path: Assets/Scenes/Menu.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0
