@@ -49,7 +49,7 @@ public class morseControl : MonoBehaviour
                     levelScore -= Time.deltaTime * 4.0f;
                 }
             } else if (Input.GetKey(KeyCode.Space)) {
-                levelScore -= Time.deltaTime * 2.0f;
+                levelScore -= Time.deltaTime * 4.0f;
             }
             levelScore = Mathf.Clamp(levelScore, -1.0f, 1.0f);
             Debug.Log(levelScore);
