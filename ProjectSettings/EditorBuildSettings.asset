@@ -36,9 +36,15 @@ EditorBuildSettings:
     path: Assets/Scenes/fairTrade/Win.unity
     guid: edafcafd1028e4b40bd3477cc6037ee2
   - enabled: 1
-    path: Assets/Scenes/Morse/MorseWin.unity
+    path: Assets/Scenes/morseSignal/MorseWin.unity
     guid: 81c8108188c4b664ba0ba3ced5826511
   - enabled: 1
-    path: Assets/Scenes/Morse/MorseLose.unity
+    path: Assets/Scenes/morseSignal/MorseLose.unity
     guid: c76cd16f365eed34d99680dbc7b61504
+  - enabled: 1
+    path: Assets/Scenes/spaceRocket/spaceWin.unity
+    guid: 0c6b92d62e4a72a44a47f03f378e1756
+  - enabled: 1
+    path: Assets/Scenes/spaceRocket/spaceLose.unity
+    guid: be09197df13cbde4c80f785a6e5fcb15
   m_configObjects: {}

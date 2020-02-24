@@ -46,27 +46,23 @@ public class characterController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             current_speed += speedIncrement;
         }
-        if (Input.GetKey(KeyCode.R))
+/*        if (Input.GetKey(KeyCode.R))
         {
             current_speed = speed;
             transform.position = new Vector3(0, 0, 0);
             Time.timeScale = 1f;
             restart.SetActive(false);
         }
+*/
         if (Physics2D.OverlapCircle(botCheck.position, 0f, whatIsWin) || Physics2D.OverlapCircle(topCheck.position, 0f, whatIsWin) || Physics2D.OverlapCircle(rightCheck.position, 0f, whatIsWin) || Physics2D.OverlapCircle(leftCheck.position, 0f, whatIsWin))
         {
             win.SetActive(true);
-            timer = 0;
-            Time.timeScale = 0f;
+            SceneManager.LoadScene("spaceWin", LoadSceneMode.Single);
         }
         if (Physics2D.OverlapCircle(botCheck.position, 0f, whatIsObject) || Physics2D.OverlapCircle(topCheck.position, 0f, whatIsObject) || Physics2D.OverlapCircle(rightCheck.position, 0f, whatIsObject) || Physics2D.OverlapCircle(leftCheck.position, 0f, whatIsObject))
         {
+            SceneManager.LoadScene("spaceLose", LoadSceneMode.Single);
             lose = true;
-        }
-        if (win.activeSelf || lose) {
-            SceneManager.LoadScene(0);
-            scr.setScore(0);
-            scr.Desactivate();
         }
     }
 }

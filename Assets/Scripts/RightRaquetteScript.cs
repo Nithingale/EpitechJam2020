@@ -36,7 +36,6 @@ public class RightRaquetteScript : MonoBehaviour
 
         if (transform.position.y == targetUp.y)
         {
-            Debug.Log("toto");
             target = targetDown;
             transform.Rotate(Vector3.forward * + 20);
         }
@@ -45,7 +44,6 @@ public class RightRaquetteScript : MonoBehaviour
         {
             if (startTime > time)
             {
-                Debug.Log("Smash");
                 if (transform.position.y == targetDown.y)
                 {
                     Rigidbody2D rb = Grenada.GetComponent<Rigidbody2D>();
